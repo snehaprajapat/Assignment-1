@@ -1,0 +1,22 @@
+def arrange(input_list):
+    count_1 = 0
+    count_2 = 0
+    for num in input_list:
+        if num == 1:
+            count_1 += 1
+        elif num == 2:
+            count_2 += 1
+    
+    for i in range(len(input_list)):
+        if i < count_1:
+            input_list[i] = 1
+        else:
+            input_list[i] = 2
+
+    for num in input_list:
+        print(num, end=" ")
+
+input_list = [1, 2, 2, 2, 1, 2, 2]
+
+# Call the arrange function
+arrange(input_list)
