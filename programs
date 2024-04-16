@@ -1,0 +1,16 @@
+#problem1
+M=int(input())
+element=input()
+lis=[]
+semi=';'
+add=0
+k=''
+if(1<=M<=10^6):
+    for i in element:
+        if i==semi:
+            add=add+int(k)
+            k=''
+        else:
+            k=k+i   
+add=add+int(k)      
+print(add)
