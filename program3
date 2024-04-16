@@ -1,0 +1,19 @@
+def reflection(input_str):
+  
+    str1 = ""
+    str2 = ""
+
+    for char in input_str:
+        if char == ' ':
+            str1 = str2 + ' ' + str1
+            str2 = ""  
+        else:
+            str2 += char  
+            
+    str1 = str2 + ' ' + str1
+
+    print(str1)
+
+input_str = input()
+
+reflection(input_str)
