@@ -1,0 +1,16 @@
+def turnaround(lis):
+    turnaround_index = lis.index(50)
+
+    for i in range(turnaround_index, len(lis)):
+        print(lis[i])
+
+    for i in range(turnaround_index):
+        print(lis[i])
+M = int(input())
+lis = []
+
+for _ in range(M):
+    num = int(input())
+    lis.append(num)
+    
+turnaround(lis)
