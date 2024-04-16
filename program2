@@ -1,0 +1,25 @@
+#problem2
+M=int(input())
+element = input()
+values = []
+_str = ""
+
+for char in element:
+    if char == ',':
+        values.append(int(_str))
+        _str = ""
+    else:
+        _str += char
+values.append(int(_str)) 
+
+N = int(input())
+
+found = False
+for i in range(len(values)):
+    if values[i] == N:
+        print(i)
+        found = True
+        break
+
+if not found:
+    print("Better Luck Next Time")
