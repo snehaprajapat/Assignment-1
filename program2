@@ -1,25 +1,32 @@
-#problem2
 M=int(input())
-element = input()
-values = []
-_str = ""
+user_input = input()
 
-for char in element:
-    if char == ',':
-        values.append(int(_str))
-        _str = ""
+elements = []
+element = ''
+
+for comma in user_input:
+    if comma != ',':
+        element += comma
     else:
-        _str += char
-values.append(int(_str)) 
+        elements.append(int(element))
+        element = ''
 
-N = int(input())
+elements.append(int(element))
 
-found = False
-for i in range(len(values)):
-    if values[i] == N:
-        print(i)
-        found = True
-        break
+N=int(input())
+count1 = False
+count2 = False
+for i in range(len(elements)):
+    if elements[i] == N:
+        if count1 is False:
+            count1 = i
+        elif count2 is False and i != count1:
+            count2 = i
+            break
 
-if not found:
+if count2 is not False: 
+    print(count2)
+elif count1 is not False:
+    print(count1)
+else:
     print("Better Luck Next Time")
