@@ -1,19 +1,16 @@
-def reflection(input_str):
-  
-    str1 = ""
-    str2 = ""
-
-    for char in input_str:
-        if char == ' ':
-            str1 = str2 + ' ' + str1
-            str2 = ""  
+input_user=input()
+strn=input()
+def reflection(input_user):
+    str = ""
+    lis = []
+    for i in strn:
+        if i == ",":
+            lis.append(str)
+            str= ""
         else:
-            str2 += char  
-            
-    str1 = str2 + ' ' + str1
-
-    print(str1)
-
-input_str = input()
-
-reflection(input_str)
+            str = str + i
+    lis.append(str)
+    reverse = lis[::-1]
+    for str in reverse:
+        print(str)
+reflection(input_user)
